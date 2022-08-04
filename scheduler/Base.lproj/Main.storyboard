@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create-->
+        <!--Maker View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MakerViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create" image="calendar.badge.plus" catalog="system" selectedImage="calendar.badge.plus" id="X71-IG-bHX"/>
+                    <navigationItem key="navigationItem" id="SH8-oO-EcZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="97.767857142857139"/>
         </scene>
-        <!--Saved-->
+        <!--Saved View Controller-->
         <scene sceneID="kmk-gt-tqw">
             <objects>
                 <viewController id="5P2-nR-foJ" customClass="SavedViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,11 +34,11 @@
                         <viewLayoutGuide key="safeArea" id="Phh-oa-Yx3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" selectedImage="bookmark.fill" id="C46-eN-qfO"/>
+                    <navigationItem key="navigationItem" id="sM7-9u-Sud"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="so3-J9-whR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="799"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="798.88392857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HGC-Yz-CZR">
@@ -52,13 +52,53 @@
                         <tabBarAppearance key="scrollEdgeAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Cot-TO-FAU"/>
-                        <segue destination="5P2-nR-foJ" kind="relationship" relationship="viewControllers" id="CdR-fl-mgp"/>
+                        <segue destination="t4z-dH-SnV" kind="relationship" relationship="viewControllers" id="Cot-TO-FAU"/>
+                        <segue destination="EF3-48-XdH" kind="relationship" relationship="viewControllers" id="CdR-fl-mgp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdp-an-hYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106" y="468"/>
+        </scene>
+        <!--Create-->
+        <scene sceneID="CNV-7b-wEB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t4z-dH-SnV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create" image="calendar.badge.plus" catalog="system" selectedImage="calendar.badge.plus" id="X71-IG-bHX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JbP-jA-akG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8V6-E3-H2g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5R-dI-yed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
+        </scene>
+        <!--Saved-->
+        <scene sceneID="UGL-Rx-2jk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EF3-48-XdH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" selectedImage="bookmark.fill" id="C46-eN-qfO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ev6-tX-Tp5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5P2-nR-foJ" kind="relationship" relationship="rootViewController" id="ijs-18-nWl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dnS-TM-mQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="798.88392857142856"/>
         </scene>
     </scenes>
     <resources>
