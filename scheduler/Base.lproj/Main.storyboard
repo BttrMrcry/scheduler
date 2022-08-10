@@ -3,12 +3,13 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Saved View Controller-->
+        <!--a-->
         <scene sceneID="kmk-gt-tqw">
             <objects>
                 <viewController id="5P2-nR-foJ" customClass="SavedViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="Phh-oa-Yx3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sM7-9u-Sud"/>
+                    <navigationItem key="navigationItem" title="a" largeTitleDisplayMode="always" id="sM7-9u-Sud"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="so3-J9-whR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,8 +51,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EF3-48-XdH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" selectedImage="bookmark.fill" id="C46-eN-qfO"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ev6-tX-Tp5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ev6-tX-Tp5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
@@ -64,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="798.88392857142856"/>
         </scene>
-        <!--Maker View Controller-->
+        <!--Horarios-->
         <scene sceneID="0yh-t3-Yii">
             <objects>
                 <viewController id="44z-fI-ioG" customClass="MakerViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,8 +73,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-X2-1YM">
-                                <rect key="frame" x="0.0" y="407" width="414" height="278"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiL-jF-2st">
+                                <rect key="frame" x="20" y="738" width="47" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" imagePadding="0.0">
+                                    <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAz-kA-6HQ">
+                                <rect key="frame" x="75" y="735" width="319" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Generar horarios">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="26"/>
+                                </buttonConfiguration>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-X2-1YM">
+                                <rect key="frame" x="0.0" y="174" width="414" height="285"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="makerCell" textLabel="oKW-LY-4Zl" style="IBUITableViewCellStyleDefault" id="hOT-R8-HfC">
@@ -98,21 +117,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D3q-94-dXM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="D3q-94-dXM" firstAttribute="bottom" secondItem="AYT-X2-1YM" secondAttribute="bottom" constant="128" id="5Wa-48-xhC"/>
-                            <constraint firstItem="AYT-X2-1YM" firstAttribute="top" secondItem="D3q-94-dXM" secondAttribute="top" constant="319" id="A3M-SM-X5e"/>
-                            <constraint firstItem="AYT-X2-1YM" firstAttribute="leading" secondItem="D3q-94-dXM" secondAttribute="leading" id="vuB-kp-f56"/>
-                            <constraint firstItem="AYT-X2-1YM" firstAttribute="centerX" secondItem="xHP-CM-p7d" secondAttribute="centerX" id="xt5-bM-HrW"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IVt-Ae-xoa"/>
+                    <navigationItem key="navigationItem" title="Horarios" largeTitleDisplayMode="never" id="IVt-Ae-xoa"/>
                     <connections>
                         <outlet property="tableView" destination="AYT-X2-1YM" id="8AT-UX-aO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R16-oD-dFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="137"/>
+            <point key="canvasLocation" x="1813.0434782608697" y="136.60714285714286"/>
         </scene>
         <!--Create-->
         <scene sceneID="n6m-3j-HRw">
@@ -120,10 +133,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BBe-cb-2sR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Create" image="calendar.badge.plus" catalog="system" selectedImage="calendar.badge.plus" id="fJs-Oe-bzC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCq-dh-Dg3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gCq-dh-Dg3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="compactAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -138,6 +154,7 @@
     <resources>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
