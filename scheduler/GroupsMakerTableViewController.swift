@@ -37,6 +37,8 @@ class GroupsMakerTableViewController: UITableViewController {
         return cell
     }
     
+    // Provide a cell object for each row.
+
 
     /*
     // Override to support conditional editing of the table view.
