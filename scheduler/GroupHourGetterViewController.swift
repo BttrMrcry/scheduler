@@ -30,6 +30,10 @@ class GroupHourGetterViewController: UIViewController, UITableViewDataSource, UI
        return cell
     }
     
+    @IBAction func unwindToGroupHourGetter(unwindSegue: UIStoryboardSegue) {
+    
+    }
+    
 
     /*
     // MARK: - Navigation
