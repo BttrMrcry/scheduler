@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		704EAE0728AC07B4009B5565 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EAE0628AC07B4009B5565 /* customTableViewCell.swift */; };
 		70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D0289C1FD7002B40CA /* AppDelegate.swift */; };
 		70DF78D3289C1FD7002B40CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */; };
 		70DF78D5289C1FD7002B40CA /* MakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D4289C1FD7002B40CA /* MakerViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		704EAE0628AC07B4009B5565 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
 		70DF78CD289C1FD7002B40CA /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DF78D0289C1FD7002B40CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */,
 				70DF78D4289C1FD7002B40CA /* MakerViewController.swift */,
 				70DF78D6289C1FD7002B40CA /* Main.storyboard */,
+				704EAE0628AC07B4009B5565 /* customTableViewCell.swift */,
 				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
 				70DF78D9289C1FD9002B40CA /* Assets.xcassets */,
 				70DF78DB289C1FD9002B40CA /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			files = (
 				D5E6421828A9A03200E846D4 /* Group.swift in Sources */,
 				70DF78D5289C1FD7002B40CA /* MakerViewController.swift in Sources */,
+				704EAE0728AC07B4009B5565 /* customTableViewCell.swift in Sources */,
 				70E3D47F28A6B7B800FE64D3 /* GetDaysViewController.swift in Sources */,
 				70DF825A28A4088F00D3CCC6 /* GroupsMakerTableViewController.swift in Sources */,
 				D5FAF5CE28A87C790069F0B6 /* Subject.swift in Sources */,

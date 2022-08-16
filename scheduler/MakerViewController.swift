@@ -12,6 +12,9 @@ import UIKit
 
 class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    
     var subjectArray = [Subject(name: "Calculus"), Subject(name:"EDA"), Subject(name:"POO"), Subject(name: "Circuits"), Subject(name:"AI")]
     
     
@@ -25,6 +28,12 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         let tableViewEditMode = tableView.isEditing
+        if tableViewEditMode {
+            editButton.title = "Editar"
+        }else{
+            editButton.title = "Listo"
+        }
+        
         tableView.setEditing(!tableViewEditMode, animated: true)
     }
     
@@ -85,7 +94,9 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
         if indexPath.row == 0 {
             if subjectArray[indexPath.section].isOpen {
                 subjectArray[indexPath.section].isOpen = false
@@ -97,12 +108,9 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 tableView.reloadSections(sections, with: .none)
             }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "GroupsView") as? GroupsMakerTableViewController{
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        
+        
+        
     }
 }
 
