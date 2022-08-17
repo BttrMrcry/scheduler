@@ -8,7 +8,6 @@
 import Foundation
 
 struct Subject{
-    var isOpen = false  //For expandable tableview cells only
     let name:String
     var Groups:[Group]
     init(name:String){

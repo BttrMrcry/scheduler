@@ -170,7 +170,7 @@
                     <navigationItem key="navigationItem" title="Horarios" largeTitleDisplayMode="always" id="IVt-Ae-xoa">
                         <rightBarButtonItems>
                             <barButtonItem title="Agregsr" image="plus" catalog="system" id="Zdf-xN-z8G"/>
-                            <barButtonItem title="Editar" image="square.and.arrow.up.fill" catalog="system" id="wNT-5Z-qBE">
+                            <barButtonItem title="Editar" id="wNT-5Z-qBE">
                                 <connections>
                                     <action selector="EditButtonTapped:" destination="44z-fI-ioG" id="xK2-uS-qNx"/>
                                 </connections>
@@ -602,7 +602,6 @@
         <image name="gear.circle" catalog="system" width="128" height="121"/>
         <image name="gear.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
