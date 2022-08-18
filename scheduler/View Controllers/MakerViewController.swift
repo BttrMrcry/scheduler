@@ -13,10 +13,10 @@ import UIKit
 class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    var subjectsController:SubjectsController = SubjectsController()
     
     
-    var subjectArray = [Subject(name: "Calculus"), Subject(name:"EDA"), Subject(name:"POO"), Subject(name: "Circuits"), Subject(name:"AI")]
-    
+
     
     @IBAction func EditButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -41,7 +41,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // Return the number of rows for the table.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjectArray.count
+        return subjectsController.subjects.count
     }
 
     // Provide a cell object for each row.
@@ -50,7 +50,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Fetch a cell of the appropriate type.
         let cell = tableView.dequeueReusableCell(withIdentifier: "makerCell", for: indexPath)
        // Configure the cell’s contents.
-        cell.textLabel!.text = subjectArray[indexPath.row].name
+        cell.textLabel!.text = subjectsController.subjects[indexPath.row].name
         if tableView.isEditing {
             cell.showsReorderControl = true
         }else{
@@ -61,14 +61,26 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let subjectToMove = subjectArray.remove(at: sourceIndexPath.row)
-        subjectArray.insert(subjectToMove, at: destinationIndexPath.row)
+        let subjectToMove = subjectsController.subjects.remove(at: sourceIndexPath.row)
+        subjectsController.subjects.insert(subjectToMove, at: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.subjectArray.remove(at: indexPath.row)
+            subjectsController.subjects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .none)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "subjectToGroups", sender: indexPath)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GroupsTableViewController, let indexPath = sender as? IndexPath {
+            vc.subjectsController = self.subjectsController
+            vc.subjectIndex = indexPath.row
         }
     }
 

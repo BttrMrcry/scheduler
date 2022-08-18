@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A49BB228AEA13200ACAE04 /* SubjectsController.swift */; };
 		70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D0289C1FD7002B40CA /* AppDelegate.swift */; };
 		70DF78D3289C1FD7002B40CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */; };
 		70DF78D5289C1FD7002B40CA /* MakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D4289C1FD7002B40CA /* MakerViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70A49BB228AEA13200ACAE04 /* SubjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsController.swift; sourceTree = "<group>"; };
 		70DF78CD289C1FD7002B40CA /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DF78D0289C1FD7002B40CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70A49BAE28AE9FD300ACAE04 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6421728A9A03200E846D4 /* Group.swift */,
+				D5FAF5CD28A87C790069F0B6 /* Subject.swift */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		70A49BB028AEA07000ACAE04 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70DF78D4289C1FD7002B40CA /* MakerViewController.swift */,
+				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
+				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
+				70DF825928A4088F00D3CCC6 /* GroupsTableViewController.swift */,
+				70E3D47E28A6B7B800FE64D3 /* GetDaysViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		70A49BB128AEA0E800ACAE04 /* Other Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70A49BB228AEA13200ACAE04 /* SubjectsController.swift */,
+			);
+			name = "Other Controllers";
+			sourceTree = "<group>";
+		};
 		70DF78C4289C1FD7002B40CA = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +99,15 @@
 		70DF78CF289C1FD7002B40CA /* scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				70E3D47E28A6B7B800FE64D3 /* GetDaysViewController.swift */,
-				70DF78D0289C1FD7002B40CA /* AppDelegate.swift */,
-				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
-				70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */,
-				70DF78D4289C1FD7002B40CA /* MakerViewController.swift */,
 				70DF78D6289C1FD7002B40CA /* Main.storyboard */,
-				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
+				70A49BB028AEA07000ACAE04 /* View Controllers */,
+				70DF78D0289C1FD7002B40CA /* AppDelegate.swift */,
+				70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */,
+				70A49BB128AEA0E800ACAE04 /* Other Controllers */,
 				70DF78D9289C1FD9002B40CA /* Assets.xcassets */,
 				70DF78DB289C1FD9002B40CA /* LaunchScreen.storyboard */,
 				70DF78DE289C1FD9002B40CA /* Info.plist */,
-				70DF825928A4088F00D3CCC6 /* GroupsTableViewController.swift */,
-				D5FAF5CD28A87C790069F0B6 /* Subject.swift */,
-				D5E6421728A9A03200E846D4 /* Group.swift */,
+				70A49BAE28AE9FD300ACAE04 /* New Group */,
 			);
 			path = scheduler;
 			sourceTree = "<group>";
@@ -156,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */,
 				D5E6421828A9A03200E846D4 /* Group.swift in Sources */,
 				70DF78D5289C1FD7002B40CA /* MakerViewController.swift in Sources */,
 				70E3D47F28A6B7B800FE64D3 /* GetDaysViewController.swift in Sources */,

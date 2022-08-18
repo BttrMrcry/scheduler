@@ -8,10 +8,10 @@
 import UIKit
 
 class GroupsTableViewController: UITableViewController {
-
+    var subjectsController:SubjectsController!
+    var subjectIndex:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,15 +28,18 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return subjectsController.subjects[subjectIndex].Groups.count
     }
 
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
+        cell.textLabel!.text = String(subjectsController.subjects[subjectIndex].Groups[indexPath.row].number)
         return cell
     }
     
+ 
     // Provide a cell object for each row.
 
 

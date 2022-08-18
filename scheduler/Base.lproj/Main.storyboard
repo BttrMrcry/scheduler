@@ -130,9 +130,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="XDk-gH-R3M" kind="show" id="xzX-xN-lrx"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCellMaker" textLabel="NQD-ZM-fsv" style="IBUITableViewCellStyleDefault" id="jd9-Ma-a4t">
                                         <rect key="frame" x="0.0" y="88.333333969116211" width="412" height="43.666667938232422"/>
@@ -180,6 +177,7 @@
                     <connections>
                         <outlet property="editButton" destination="wNT-5Z-qBE" id="UuQ-UK-ffY"/>
                         <outlet property="tableView" destination="AYT-X2-1YM" id="8AT-UX-aO1"/>
+                        <segue destination="XDk-gH-R3M" kind="show" identifier="subjectToGroups" id="0Ht-dP-7uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R16-oD-dFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,7 +229,7 @@
         <!--Grupos-->
         <scene sceneID="MFS-eR-vcV">
             <objects>
-                <tableViewController storyboardIdentifier="GroupsView" id="XDk-gH-R3M" customClass="GroupsMakerTableViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GroupsView" id="XDk-gH-R3M" customClass="GroupsTableViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Tfk-0g-StQ">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
