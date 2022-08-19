@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Subject{
+struct Subject: Codable{
     let name:String
     var Groups:[Group]
     init(name:String){

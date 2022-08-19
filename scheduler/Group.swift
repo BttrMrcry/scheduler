@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Group {
+struct Group: Codable {
     let number:Int
     let profesorName:String?
     let room:Int? //Number of students allowed in that group
