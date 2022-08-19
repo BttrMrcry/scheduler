@@ -14,10 +14,6 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     var subjectsController:SubjectsController = SubjectsController()
-    
-    
-
-    
     @IBAction func EditButtonTapped(_ sender: UIBarButtonItem) {
         
         let tableViewEditMode = tableView.isEditing
@@ -29,7 +25,6 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.setEditing(!tableViewEditMode, animated: true)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +46,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "makerCell", for: indexPath)
        // Configure the cell’s contents.
         cell.textLabel!.text = subjectsController.subjects[indexPath.row].name
+        
         if tableView.isEditing {
             cell.showsReorderControl = true
         }else{

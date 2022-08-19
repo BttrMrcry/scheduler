@@ -131,23 +131,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCellMaker" textLabel="NQD-ZM-fsv" style="IBUITableViewCellStyleDefault" id="jd9-Ma-a4t">
-                                        <rect key="frame" x="0.0" y="88.333333969116211" width="412" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jd9-Ma-a4t" id="5DD-gv-BGZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="412" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQD-ZM-fsv">
-                                                    <rect key="frame" x="20" y="0.0" width="372" height="43.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
@@ -235,15 +218,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" textLabel="GAV-Bn-uid" style="IBUITableViewCellStyleDefault" id="nGW-ha-tTn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="groupCell" textLabel="GAV-Bn-uid" style="IBUITableViewCellStyleDefault" id="nGW-ha-tTn">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nGW-ha-tTn" id="0uv-25-m8J">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="399.33333333333331" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GAV-Bn-uid">
-                                            <rect key="frame" x="20" y="0.0" width="388" height="43.666667938232422"/>
+                                            <rect key="frame" x="20" y="0.0" width="371.33333333333331" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -260,13 +243,23 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Grupos" largeTitleDisplayMode="never" id="Tuo-Ww-IDQ">
-                        <barButtonItem key="rightBarButtonItem" title="Agregsr" image="plus" catalog="system" id="0zN-6b-swn">
-                            <connections>
-                                <segue destination="bvG-AT-ga8" kind="show" id="7ur-i0-j3X"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Agregsr" image="plus" catalog="system" id="0zN-6b-swn">
+                                <connections>
+                                    <segue destination="bvG-AT-ga8" kind="show" id="7ur-i0-j3X"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Editar" id="iAz-b6-qhA">
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="XDk-gH-R3M" id="J3c-gl-HnG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="iAz-b6-qhA" id="SjZ-8S-upd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFA-LP-gkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

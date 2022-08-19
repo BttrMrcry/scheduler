@@ -10,24 +10,31 @@ import UIKit
 class GroupsTableViewController: UITableViewController {
     var subjectsController:SubjectsController!
     var subjectIndex:Int!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem){
+        let tableViewEditMode = tableView.isEditing
+        if tableViewEditMode {
+            editButton.title = "Editar"
+        }else{
+            editButton.title = "Listo"
+        }
+        print(tableView.isEditing)
+        tableView.setEditing(!tableViewEditMode, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.title = subjectsController.subjects[subjectIndex].name
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+       
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return subjectsController.subjects[subjectIndex].Groups.count
     }
 
@@ -36,8 +43,28 @@ class GroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         cell.textLabel!.text = String(subjectsController.subjects[subjectIndex].Groups[indexPath.row].number)
+        
+        if tableView.isEditing {
+            cell.showsReorderControl = true
+        }else{
+            cell.showsReorderControl = false
+        }
+
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let subjectToMove = subjectsController.subjects[subjectIndex].Groups.remove(at: sourceIndexPath.row)
+        subjectsController.subjects[subjectIndex].Groups.insert(subjectToMove, at: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            subjectsController.subjects[subjectIndex].Groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .none)
+        }
+    }
+    
     
  
     // Provide a cell object for each row.
