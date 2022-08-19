@@ -51,13 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70A49BAE28AE9FD300ACAE04 /* New Group */ = {
+		70A49BAE28AE9FD300ACAE04 /* models */ = {
 			isa = PBXGroup;
 			children = (
 				D5E6421728A9A03200E846D4 /* Group.swift */,
 				D5FAF5CD28A87C790069F0B6 /* Subject.swift */,
 			);
-			name = "New Group";
+			name = models;
 			sourceTree = "<group>";
 		};
 		70A49BB028AEA07000ACAE04 /* View Controllers */ = {
@@ -107,7 +107,7 @@
 				70DF78D9289C1FD9002B40CA /* Assets.xcassets */,
 				70DF78DB289C1FD9002B40CA /* LaunchScreen.storyboard */,
 				70DF78DE289C1FD9002B40CA /* Info.plist */,
-				70A49BAE28AE9FD300ACAE04 /* New Group */,
+				70A49BAE28AE9FD300ACAE04 /* models */,
 			);
 			path = scheduler;
 			sourceTree = "<group>";
