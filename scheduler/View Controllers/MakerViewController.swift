@@ -27,7 +27,6 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        subjectsController.loadSubjects()
         tableView.delegate = self
         tableView.dataSource = self
     }
