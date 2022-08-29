@@ -15,7 +15,6 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var editButton: UIBarButtonItem!
     var subjectsController:SubjectsController = SubjectsController()
     @IBAction func EditButtonTapped(_ sender: UIBarButtonItem) {
-        
         let tableViewEditMode = tableView.isEditing
         if tableViewEditMode {
             editButton.title = "Editar"
@@ -28,10 +27,18 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subjectsController.loadSubjects()
         tableView.delegate = self
         tableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        subjectsController.loadSubjects()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        subjectsController.saveSubjects()
+    }
 
     
     // Return the number of rows for the table.
@@ -79,6 +86,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
             vc.subjectIndex = indexPath.row
         }
     }
+    
 
 }
 

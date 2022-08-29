@@ -6,44 +6,41 @@
 //
 
 import Foundation
+import UIKit
 
 class SubjectsController{
-    var subjects:[Subject]
+    var subjects:[Subject]!
     
-    init(){
-        subjects = [Subject(name: "Calculus"), Subject(name:"EDA"), Subject(name:"POO"), Subject(name: "Circuits"), Subject(name:"AI")]
-    }
-    
-    private func loadSubjects(){
+    func loadSubjects(){
         let propertyListDecoder = PropertyListDecoder()
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsDirectory.appendingPathComponent("subject").appendingPathComponent("plist")
         guard let retrivedSubjects = try? Data(contentsOf: fileURL) else {
-            subjects = [Subject]()
-            saveSubjects()
+            print("Los datos no se pudieron cargar")
+            subjects = [Subject(name: "Calculus"), Subject(name:"EDA"), Subject(name:"POO"), Subject(name: "Circuits"), Subject(name:"AI")]
             return
         }
         
         guard let decodedSubjects = try? propertyListDecoder.decode([Subject].self, from: retrivedSubjects) else{
+            print("Los datos cargaron pero no son válidos")
             subjects = [Subject]()
             saveSubjects()
             return
         }
-        
         subjects = decodedSubjects
-        
-        
+        print("Datos cargados exitosamente")
     }
-        func saveSubjects(){
+    func saveSubjects(){
         let propertyListEncoder = PropertyListEncoder()
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsDirectory.appendingPathComponent("subject").appendingPathComponent("plist")
         
         guard let encodedSubjects = try? propertyListEncoder.encode(self.subjects)else{
+            print("Error al guardar los datos")
             return
         }
         
         try? encodedSubjects.write(to: fileURL, options: .noFileProtection)
-        
+        print("Datos guardados exitosamente")
     }
 }
