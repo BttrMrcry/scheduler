@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		709808E228C2623C0028A809 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709808E128C2623C0028A809 /* Day.swift */; };
+		709808E428C267240028A809 /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709808E328C267240028A809 /* Hour.swift */; };
 		70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A49BB228AEA13200ACAE04 /* SubjectsController.swift */; };
 		70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D0289C1FD7002B40CA /* AppDelegate.swift */; };
 		70DF78D3289C1FD7002B40CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		709808E128C2623C0028A809 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		709808E328C267240028A809 /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		70A49BB228AEA13200ACAE04 /* SubjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsController.swift; sourceTree = "<group>"; };
 		70DF78CD289C1FD7002B40CA /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DF78D0289C1FD7002B40CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				D5E6421728A9A03200E846D4 /* Group.swift */,
 				D5FAF5CD28A87C790069F0B6 /* Subject.swift */,
+				709808E128C2623C0028A809 /* Day.swift */,
+				709808E328C267240028A809 /* Hour.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 			files = (
 				70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */,
 				D5E6421828A9A03200E846D4 /* Group.swift in Sources */,
+				709808E228C2623C0028A809 /* Day.swift in Sources */,
+				709808E428C267240028A809 /* Hour.swift in Sources */,
 				70DF78D5289C1FD7002B40CA /* MakerViewController.swift in Sources */,
 				70E3D47F28A6B7B800FE64D3 /* GetDaysViewController.swift in Sources */,
 				70DF825A28A4088F00D3CCC6 /* GroupsTableViewController.swift in Sources */,
