@@ -11,7 +11,9 @@ struct Group: Codable {
     let number:Int
     let profesorName:String?
     let room:Int? //Number of students allowed in that group
-    let days:[Day]?
+    var days:[subjectSchedule]?
+    
+    //TO DO: Change this constructure and atributes to be not optionals
     init(number:Int){
         self.number = number
         self.profesorName = nil
