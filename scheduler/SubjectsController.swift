@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SubjectsController{
-    var subjects:[Subject]!
+    var subjects:[Subject] = []
     
     func loadSubjects(){
         let propertyListDecoder = PropertyListDecoder()
@@ -43,5 +43,19 @@ class SubjectsController{
         
         try? encodedSubjects.write(to: fileURL, options: .noFileProtection)
         print("Datos guardados exitosamente")
+    }
+    
+    func createSchedules(){
+        
+    }
+    
+    private func dfsCreateSchedules(depth: Int){
+        if(depth >= subjects.count){
+            return
+        }
+        for group in subjects[depth].Groups{
+            
+        }
+        
     }
 }
