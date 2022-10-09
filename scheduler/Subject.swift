@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Subject: Codable{
+struct Subject: Codable {
     let name:String
     var Groups:[Group]
     init(name:String){
         self.name = name
-        Groups = [Group(number: 1), Group(number: 2), Group(number: 3), Group(number: 4)]
+        Groups = [Group(groupID: "A"), Group(groupID: "B"), Group(groupID: "C"), Group(groupID: "D")]
     }
 }

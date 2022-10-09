@@ -42,7 +42,7 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
-        cell.textLabel!.text = String(subjectsController.subjects[subjectIndex].Groups[indexPath.row].number)
+        cell.textLabel!.text = subjectsController.subjects[subjectIndex].Groups[indexPath.row].groupID
         
         if tableView.isEditing {
             cell.showsReorderControl = true
