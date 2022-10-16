@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "avltree-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tonystone/avltree-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "076a82b63b597503e8d4638429037386e130d8c6"
+      }
+    }
+  ],
+  "version" : 2
+}
