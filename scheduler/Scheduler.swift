@@ -48,7 +48,7 @@ struct Scheduler {
 
         let currentSubject = subjects[depth]
         
-        groupsLoop: for subjectGroup in currentSubject.Groups {
+        groupsLoop: for subjectGroup in currentSubject.groups {
             var insertedActiveTimes = [ActiveTime]()
             for activeTime in subjectGroup.activeHours {
                 if let _ = activeTimeTree.search(value: activeTime)?.value {

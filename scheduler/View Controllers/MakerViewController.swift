@@ -20,6 +20,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        subjectsController.subjects = subjects
         subjectsController.saveSubjects()
     }
 

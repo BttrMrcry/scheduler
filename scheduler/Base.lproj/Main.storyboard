@@ -205,95 +205,6 @@
             </objects>
             <point key="canvasLocation" x="967" y="1458"/>
         </scene>
-        <!--New Subject-->
-        <scene sceneID="XQg-86-JJ1">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GX1-9c-wPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="mlv-6Q-dYi" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="h57-ld-0mF">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Subject's Name" id="Hf5-xd-yZv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VPc-PJ-hoI">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="428" height="56.333332061767578"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VPc-PJ-hoI" id="dnk-mg-mht">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="56.333332061767578"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example: Calculus" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-bU-XDu">
-                                                    <rect key="frame" x="20" y="11" width="388" height="34.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zx8-bU-XDu" secondAttribute="trailing" id="96S-mF-UhP"/>
-                                                <constraint firstItem="zx8-bU-XDu" firstAttribute="top" secondItem="dnk-mg-mht" secondAttribute="topMargin" id="RFl-xK-sZE"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zx8-bU-XDu" secondAttribute="bottom" id="W9v-SL-5MR"/>
-                                                <constraint firstItem="zx8-bU-XDu" firstAttribute="leading" secondItem="dnk-mg-mht" secondAttribute="leadingMargin" id="z8F-4h-uKw"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="ytW-uU-ZYo">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="T5r-LY-53B">
-                                        <rect key="frame" x="0.0" y="147.66666221618652" width="428" height="56.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T5r-LY-53B" id="6RO-Ne-WD8">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="56.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-L1-FwX">
-                                                    <rect key="frame" x="20" y="11" width="388" height="34.666666666666664"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Add Groups"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="bfM-L1-FwX" firstAttribute="leading" secondItem="6RO-Ne-WD8" secondAttribute="leadingMargin" id="NfA-0k-BvF"/>
-                                                <constraint firstItem="bfM-L1-FwX" firstAttribute="top" secondItem="6RO-Ne-WD8" secondAttribute="topMargin" id="SwP-jc-NYF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bfM-L1-FwX" secondAttribute="trailing" id="hHb-ss-xt8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bfM-L1-FwX" secondAttribute="bottom" id="hYa-k8-5Rj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="mlv-6Q-dYi" id="1Ss-NT-MfW"/>
-                            <outlet property="delegate" destination="mlv-6Q-dYi" id="R0k-26-Lz5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="New Subject" id="mjO-Ic-JcE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1Ei-v7-qIM"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="RRs-GM-SA0"/>
-                    </navigationItem>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="2659" y="-598"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="crc-Ho-ZST">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="88k-DJ-1If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController id="eEx-YB-CuW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLc-OP-Q6f">
-                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mlv-6Q-dYi" kind="relationship" relationship="rootViewController" id="San-6d-hSi"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1780" y="-598"/>
-        </scene>
         <!--Grupos-->
         <scene sceneID="MFS-eR-vcV">
             <objects>
@@ -334,17 +245,10 @@
                                     <segue destination="bvG-AT-ga8" kind="show" id="7ur-i0-j3X"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Editar" id="iAz-b6-qhA">
-                                <connections>
-                                    <action selector="editButtonTapped:" destination="XDk-gH-R3M" id="J3c-gl-HnG"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="edit" id="iAz-b6-qhA"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="editButton" destination="iAz-b6-qhA" id="SjZ-8S-upd"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFA-LP-gkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
