@@ -9,7 +9,6 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.setEditing(false, animated: false)
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
@@ -38,6 +37,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alertController, animated: true, completion: nil)
     }
     
+//    TODO: Look for repeated subject names
     func checkSubjectName(_ name: String,_ exists: Bool){
         if(!name.isEmpty && !exists){
             let subject = Subject(name: name)
@@ -104,23 +104,9 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
             let subjectToEdit = subjects[indexPath.row]
-            return GroupsTableViewController(coder: coder, subject: subjectToEdit)
+            return GroupsTableViewController(coder: coder, subject: subjectToEdit, subjectController: subjectsController, selectedIndexPath: indexPath)
         } else {
-            return GroupsTableViewController(coder: coder, subject: nil)
-        }
-    }
-    
-    @IBAction func unwindToGroupTableView(segue: UIStoryboardSegue){
-        guard let sourceViewController = segue.source as? GroupsTableViewController,
-              let subject = sourceViewController.subject else {return}
-        
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            subjects[selectedIndexPath.row] = subject
-            print(subject.groups)
-            subjectsController.saveSubjects()
-            tableView.reloadRows(at: [selectedIndexPath], with: .none)
-        } else {
-            print("no entré")
+            return GroupsTableViewController(coder: coder, subject: nil, subjectController: nil, selectedIndexPath: nil)
         }
     }
 }

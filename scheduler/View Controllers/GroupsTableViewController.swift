@@ -2,14 +2,20 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     var subject: Subject?
+    var subjectController: SubjectsController?
+    var selectedIndexPath: IndexPath?
     
-    init?(coder: NSCoder, subject: Subject?) {
+    init?(coder: NSCoder, subject: Subject?, subjectController: SubjectsController?, selectedIndexPath: IndexPath?) {
         self.subject = subject
+        self.subjectController = subjectController
+        self.selectedIndexPath = selectedIndexPath
         super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {
         self.subject = nil
+        self.subjectController = nil
+        self.selectedIndexPath = nil
         super.init(coder: coder)
     }
     
@@ -22,6 +28,11 @@ class GroupsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        subjectController!.subjects[selectedIndexPath!.row] = subject!
+        subjectController!.saveSubjects()
     }
     
     // MARK: - Table view data source
@@ -39,7 +50,7 @@ class GroupsTableViewController: UITableViewController {
         let group = subject!.groups[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = group.groupID
-        content.secondaryText = "Professor: \(group.profesorName)   Classroom: \(group.room)"
+        content.secondaryText = "Professor: \(group.profesorName)   Slots: \(group.slots)"
         cell.contentConfiguration = content
         cell.showsReorderControl = true
         return cell
@@ -60,8 +71,4 @@ class GroupsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .none)
         }
     }
-    
-
-    
-    
 }

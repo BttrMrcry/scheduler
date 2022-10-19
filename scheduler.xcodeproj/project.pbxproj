@@ -72,9 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				70DF78D4289C1FD7002B40CA /* MakerViewController.swift */,
-				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
-				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
 				70DF825928A4088F00D3CCC6 /* GroupsTableViewController.swift */,
+				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
+				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
 				70E3D47E28A6B7B800FE64D3 /* GetDaysViewController.swift */,
 			);
 			path = "View Controllers";
