@@ -1,22 +1,14 @@
-//
-//  Group.swift
-//  scheduler
-//
-//  Created by Ricardo López  on 14/08/22.
-//
-
 import Foundation
 
 class Group: Codable{
     let groupID:String
-    let profesorName:String?
-    let room:Int? //Number of students allowed in that group
+    let profesorName:String
+    let slots:Int //Number of students allowed in that group
     var activeHours:[ActiveTime] = []
-    //TO DO: Change this constructure and atributes to be not optionals
-    init(groupID: String){
+    init(groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69){
         self.groupID = groupID
-        self.profesorName = nil
-        self.room = nil
+        self.profesorName = profesorName
+        self.slots = slots
     }
 }
 

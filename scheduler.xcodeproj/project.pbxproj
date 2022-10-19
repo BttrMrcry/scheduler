@@ -72,9 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				70DF78D4289C1FD7002B40CA /* MakerViewController.swift */,
-				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
-				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
 				70DF825928A4088F00D3CCC6 /* GroupsTableViewController.swift */,
+				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
+				70DF78E4289C30D4002B40CA /* SavedViewController.swift */,
 				70E3D47E28A6B7B800FE64D3 /* GetDaysViewController.swift */,
 			);
 			path = "View Controllers";
@@ -112,10 +112,10 @@
 				70DF78D0289C1FD7002B40CA /* AppDelegate.swift */,
 				70DF78D2289C1FD7002B40CA /* SceneDelegate.swift */,
 				70A49BB128AEA0E800ACAE04 /* Other Controllers */,
+				70A49BAE28AE9FD300ACAE04 /* models */,
 				70DF78D9289C1FD9002B40CA /* Assets.xcassets */,
 				70DF78DB289C1FD9002B40CA /* LaunchScreen.storyboard */,
 				70DF78DE289C1FD9002B40CA /* Info.plist */,
-				70A49BAE28AE9FD300ACAE04 /* models */,
 			);
 			path = scheduler;
 			sourceTree = "<group>";
@@ -353,8 +353,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T878FXD47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = scheduler/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,6 +372,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ioslab.scheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,8 +384,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T878FXD47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = scheduler/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -398,6 +403,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ioslab.scheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

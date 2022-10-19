@@ -1,48 +1,66 @@
-//
-//  ViewController.swift
-//  scheduler
-//
-//  Created by rl on 04/08/22.
-//
-
 import UIKit
-
-
-
 
 class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
     var subjectsController:SubjectsController = SubjectsController()
-    @IBAction func EditButtonTapped(_ sender: UIBarButtonItem) {
-        let tableViewEditMode = tableView.isEditing
-        if tableViewEditMode {
-            editButton.title = "Editar"
-        }else{
-            editButton.title = "Listo"
-        }
-        
-        tableView.setEditing(!tableViewEditMode, animated: true)
-    }
+    var subjects: [Subject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         subjectsController.loadSubjects()
+        subjects = subjectsController.subjects
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        subjectsController.subjects = subjects
         subjectsController.saveSubjects()
     }
+    
+    func addSubjectAlertController(){
+        let alertController = UIAlertController(title: "Add Subject", message: "Enter subject's name", preferredStyle: .alert)
+        
+        alertController.addTextField(configurationHandler: {textField in textField.placeholder = "Example: Calculus"})
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in self.checkSubjectName(alertController.textFields?.first?.text ?? "", false)})
+  
+        alertController.addAction(ok)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+//    TODO: Look for repeated subject names
+    func checkSubjectName(_ name: String,_ exists: Bool){
+        if(!name.isEmpty && !exists){
+            let subject = Subject(name: name)
+            let newIndexPath = IndexPath(row: subjects.count, section: 0)
+            subjects.append(subject)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    @IBAction func addSubjectButtonTapped(_ sender: UIBarButtonItem) {
+        addSubjectAlertController()
+    }
+    
 
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     // Return the number of rows for the table.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjectsController.subjects.count
+        return subjects.count
     }
 
     // Provide a cell object for each row.
@@ -51,41 +69,46 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Fetch a cell of the appropriate type.
         let cell = tableView.dequeueReusableCell(withIdentifier: "makerCell", for: indexPath)
        // Configure the cell’s contents.
-        cell.textLabel!.text = subjectsController.subjects[indexPath.row].name
-        
-        if tableView.isEditing {
-            cell.showsReorderControl = true
-        }else{
-            cell.showsReorderControl = false
-        }
+        let subject = subjects[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = subject.name
+        content.secondaryText = "Groups: \(subject.groups.count)"
+        cell.contentConfiguration = content
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let subjectToMove = subjectsController.subjects.remove(at: sourceIndexPath.row)
-        subjectsController.subjects.insert(subjectToMove, at: destinationIndexPath.row)
+        let subjectToMove = subjects.remove(at: sourceIndexPath.row)
+        subjects.insert(subjectToMove, at: destinationIndexPath.row)
+        subjectsController.saveSubjects()
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            subjectsController.subjects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .none)
+            subjects.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            subjectsController.saveSubjects()
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "subjectToGroups", sender: indexPath)
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
     }
+        
+    // MARK: - Navigation
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? GroupsTableViewController, let indexPath = sender as? IndexPath {
-            vc.subjectsController = self.subjectsController
-            vc.subjectIndex = indexPath.row
+    @IBSegueAction func subjectToGroup(_ coder: NSCoder, sender: Any?) -> GroupsTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let subjectToEdit = subjects[indexPath.row]
+            return GroupsTableViewController(coder: coder, subject: subjectToEdit, subjectController: subjectsController, selectedIndexPath: indexPath)
+        } else {
+            return GroupsTableViewController(coder: coder, subject: nil, subjectController: nil, selectedIndexPath: nil)
         }
     }
-    
-
 }
-
