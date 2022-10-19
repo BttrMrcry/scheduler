@@ -80,6 +80,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let subjectToMove = subjects.remove(at: sourceIndexPath.row)
         subjects.insert(subjectToMove, at: destinationIndexPath.row)
+        subjectsController.saveSubjects()
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -90,6 +91,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if editingStyle == .delete {
             subjects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            subjectsController.saveSubjects()
         }
     }
     
