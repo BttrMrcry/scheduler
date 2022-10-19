@@ -30,16 +30,32 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
-        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in self.checkSubjectName(alertController.textFields?.first?.text ?? "", false)})
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: {
+            (action) -> Void in
+            let subjectName = alertController.textFields?.first?.text ?? ""
+            for curSubject in self.subjects {
+                if subjectName == curSubject.name{
+                    
+                }
+            }
+            self.checkSubjectName(subjectName, false)
+        })
+        
+        
   
         alertController.addAction(ok)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+        
+        
+        
     }
     
+
+    
 //    TODO: Look for repeated subject names
-    func checkSubjectName(_ name: String,_ exists: Bool){
-        if(!name.isEmpty && !exists){
+    func checkSubjectName(_ name: String,_ isEditing: Bool){
+        if(!name.isEmpty && !isEditing){
             let subject = Subject(name: name)
             let newIndexPath = IndexPath(row: subjects.count, section: 0)
             subjects.append(subject)
