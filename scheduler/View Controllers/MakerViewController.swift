@@ -34,8 +34,12 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
             (action) -> Void in
             let subjectName = alertController.textFields?.first?.text ?? ""
             for curSubject in self.subjects {
-                if subjectName == curSubject.name{
-                    
+                if subjectName == curSubject.name {
+                    let usedNameAlertController = UIAlertController(title: "Name already used", message: "The typed name is already in use by another subject, try another one", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                    usedNameAlertController.addAction(ok)
+                    self.present(usedNameAlertController, animated: true, completion: nil)
+                    return
                 }
             }
             self.checkSubjectName(subjectName, false)
