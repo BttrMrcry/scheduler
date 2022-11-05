@@ -1,15 +1,21 @@
 import Foundation
 
 class Group: Codable{
-    let groupID:String
-    let profesorName:String
-    let slots:Int //Number of students allowed in that group
+    var groupID:String
+    var profesorName:String
+    var slots:Int //Number of students allowed in that group
     var activeHours:[ActiveTime] = []
     init(groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69){
         self.groupID = groupID
         self.profesorName = profesorName
         self.slots = slots
     }
+    
+    
+    func dateToActiveTime(day: Int, starTime: Date, endTime: Date){
+        <#function body#>
+    }
+    
 }
 
 /*

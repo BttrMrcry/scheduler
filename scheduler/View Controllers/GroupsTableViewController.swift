@@ -71,4 +71,18 @@ class GroupsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .none)
         }
     }
+    
+    @IBSegueAction func groupToAdddGroup(_ coder: NSCoder, sender: Any?) -> AddGroupTableViewController? {
+        return AddGroupTableViewController(coder: coder, group: nil)
+    }
+    
+    @IBSegueAction func editGroup(_ coder: NSCoder, sender: Any?) -> AddGroupTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let groupToEdit = subject?.groups[indexPath.row]
+            return AddGroupTableViewController(coder: coder, group: groupToEdit)
+        } else {
+            return AddGroupTableViewController(coder: coder, group: nil)
+        }
+    }
 }
