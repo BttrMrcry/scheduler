@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70983CAA291B032600F35200 /* SchedulesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70983CA9291B032600F35200 /* SchedulesController.swift */; };
 		70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A49BB228AEA13200ACAE04 /* SubjectsController.swift */; };
 		70B64FFF28DD0C57005FF20D /* ActiveTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B64FFE28DD0C57005FF20D /* ActiveTime.swift */; };
 		70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DF78D0289C1FD7002B40CA /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70983CA9291B032600F35200 /* SchedulesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesController.swift; sourceTree = "<group>"; };
 		70A49BB228AEA13200ACAE04 /* SubjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsController.swift; sourceTree = "<group>"; };
 		70B64FFE28DD0C57005FF20D /* ActiveTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTime.swift; sourceTree = "<group>"; };
 		70DF78CD289C1FD7002B40CA /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				70A49BB228AEA13200ACAE04 /* SubjectsController.swift */,
+				70983CA9291B032600F35200 /* SchedulesController.swift */,
 			);
 			name = "Other Controllers";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				70DF825A28A4088F00D3CCC6 /* GroupsTableViewController.swift in Sources */,
 				D587F8EC28F2095C004B5DB5 /* Scheduler.swift in Sources */,
 				D5FAF5CE28A87C790069F0B6 /* Subject.swift in Sources */,
+				70983CAA291B032600F35200 /* SchedulesController.swift in Sources */,
 				70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */,
 				70DF78E5289C30D4002B40CA /* SavedViewController.swift in Sources */,
 				70DF78D3289C1FD7002B40CA /* SceneDelegate.swift in Sources */,

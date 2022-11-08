@@ -13,15 +13,14 @@ struct Scheduler {
     private var activeTimeTree = AVLTree<ActiveTime>()
     //This set keep's track of the current group combination
     private var addedGroups = Set<Group>()
-    private var subjects:[Subject]
+    private var subjects:[Subject] = []
     //Array of generated schedules
     private var generatedSchedules = [Set<Group>()]
     
-    init(subjects:[Subject]){
-        self.subjects = subjects
-    }
     
-    public mutating func makeSchedules() -> [Set<Group>] {
+    
+    public mutating func makeSchedules(subjects:[Subject]) -> [Set<Group>] {
+        self.subjects = subjects
         dfsScheduler(depth: 0)
         return generatedSchedules
     }

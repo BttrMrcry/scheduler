@@ -2,7 +2,8 @@ import UIKit
 
 class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    var subjectsController:SubjectsController = SubjectsController()
+    var subjectsController = SubjectsController()
+    var schedulesController = SchedulesController()
     var subjects: [Subject] = []
     
     override func viewDidLoad() {
@@ -130,5 +131,10 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             return GroupsTableViewController(coder: coder, subject: nil, subjectController: nil, selectedIndexPath: nil)
         }
+    }
+    @IBAction func genetateSchedulesButton(_ sender: UIButton) {
+        var scheduler = Scheduler()
+        schedulesController.currentSchedules = scheduler.makeSchedules(subjects: subjectsController.subjects)
+        print("horarios generados")
     }
 }

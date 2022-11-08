@@ -25,35 +25,6 @@
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="798.88392857142856"/>
         </scene>
-        <!--Configurations-->
-        <scene sceneID="bhR-Qh-wjZ">
-            <objects>
-                <tableViewController id="m1b-8M-5jc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ddi-dS-bKT">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yxd-a3-Rqm">
-                                <rect key="frame" x="0.0" y="50" width="428" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yxd-a3-Rqm" id="WY2-gs-Cm7">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="m1b-8M-5jc" id="Hel-fH-u4w"/>
-                            <outlet property="delegate" destination="m1b-8M-5jc" id="VD7-Vx-fnl"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Configurations" largeTitleDisplayMode="always" id="gBi-PZ-pmU"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ool-oe-6fG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1839" y="1458"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HGC-Yz-CZR">
             <objects>
@@ -68,7 +39,6 @@
                     <connections>
                         <segue destination="BBe-cb-2sR" kind="relationship" relationship="viewControllers" id="K0K-w1-evL"/>
                         <segue destination="EF3-48-XdH" kind="relationship" relationship="viewControllers" id="CdR-fl-mgp"/>
-                        <segue destination="q0o-mH-U0Z" kind="relationship" relationship="viewControllers" id="Sxy-83-LD7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdp-an-hYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,6 +79,9 @@
                                     <backgroundConfiguration key="background"/>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="genetateSchedulesButton:" destination="44z-fI-ioG" eventType="touchUpInside" id="oRn-7h-xdF"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AYT-X2-1YM">
                                 <rect key="frame" x="8" y="171" width="412" height="611.66666666666663"/>
@@ -187,25 +160,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uE-sS-sHq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="929" y="137"/>
-        </scene>
-        <!--Congifuración-->
-        <scene sceneID="5iD-Gi-hhB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q0o-mH-U0Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Congifuración" image="gear.circle" catalog="system" selectedImage="gear.circle.fill" id="azu-EJ-UqF"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="HOM-Od-QNb">
-                        <rect key="frame" x="0.0" y="47" width="428" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="m1b-8M-5jc" kind="relationship" relationship="rootViewController" id="CTR-0n-Vix"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNB-SY-3Bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="928" y="1458"/>
         </scene>
         <!--Groups-->
         <scene sceneID="MFS-eR-vcV">
@@ -639,8 +593,6 @@
         <image name="bookmark" catalog="system" width="110" height="128"/>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
-        <image name="gear.circle" catalog="system" width="128" height="123"/>
-        <image name="gear.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
