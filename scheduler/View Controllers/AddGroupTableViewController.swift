@@ -51,6 +51,13 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
         startTimeDatePicker.maximumDate = Calendar.current.date(bySettingHour: 23, minute: 30, second: 0, of: Date())
         endTimeDatePicker.maximumDate = Calendar.current.date(bySettingHour: 23, minute: 45, second: 0, of: Date())
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+        
+        
         if let group = group {
             groupIDTextField.text = group.groupID
             professorTextField.text = group.profesorName
@@ -186,6 +193,10 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
         let endTime = endTimeDatePicker.date
         
         group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
