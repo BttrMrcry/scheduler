@@ -50,7 +50,7 @@ struct Scheduler {
         
         groupsLoop: for subjectGroup in currentSubject.groups {
             var insertedActiveTimes = [ActiveTime]()
-            for activeTime in subjectGroup.activeHours {
+            for activeTime in subjectGroup.getActiveHours() {
                 if let _ = activeTimeTree.search(value: activeTime)?.value {
                     removeInsertedActiveTimes(insertedActiveTimes: insertedActiveTimes)
                     continue groupsLoop

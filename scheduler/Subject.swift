@@ -5,6 +5,7 @@ struct Subject: Codable {
     var groups:[Group]
     init(name:String){
         self.name = name
-        groups = [Group(groupID: "A"), Group(groupID: "B"), Group(groupID: "C"), Group(groupID: "D")]
+//        groups = [Group(groupID: "A"), Group(groupID: "B"), Group(groupID: "C"), Group(groupID: "D")]
+        self.groups = []
     }
 }
