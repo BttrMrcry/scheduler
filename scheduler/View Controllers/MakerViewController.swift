@@ -132,9 +132,16 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return GroupsTableViewController(coder: coder, subject: nil, subjectController: nil, selectedIndexPath: nil)
         }
     }
-    @IBAction func genetateSchedulesButton(_ sender: UIButton) {
+    
+    func genetateSchedulesButton() {
         var scheduler = Scheduler()
         schedulesController.currentSchedules = scheduler.makeSchedules(subjects: subjectsController.subjects)
         print("horarios generados")
+    }
+    
+    @IBSegueAction func showGeneratedSchedules(_ coder: NSCoder) -> UITableViewController? {
+        genetateSchedulesButton()
+        let nextTableView = SchedulesListTableViewController(
+        return <#UITableViewController(coder: coder)#>
     }
 }
