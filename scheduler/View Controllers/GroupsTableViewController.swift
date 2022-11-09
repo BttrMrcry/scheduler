@@ -72,17 +72,30 @@ class GroupsTableViewController: UITableViewController {
         }
     }
     
-    @IBSegueAction func groupToAdddGroup(_ coder: NSCoder, sender: Any?) -> AddGroupTableViewController? {
-        return AddGroupTableViewController(coder: coder, group: nil)
-    }
-    
-    @IBSegueAction func editGroup(_ coder: NSCoder, sender: Any?) -> AddGroupTableViewController? {
+    @IBSegueAction func addEditGroup(_ coder: NSCoder, sender: Any?) -> AddGroupTableViewController? {
         if let cell = sender as? UITableViewCell,
-           let indexPath = tableView.indexPath(for: cell) {
+           let indexPath = tableView.indexPath(for: cell){
             let groupToEdit = subject?.groups[indexPath.row]
             return AddGroupTableViewController(coder: coder, group: groupToEdit)
         } else {
             return AddGroupTableViewController(coder: coder, group: nil)
         }
     }
+    
+    @IBAction func unwindToGroupTableView(segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? AddGroupTableViewController,
+              let group = sourceViewController.group else { return }
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            subject?.groups[selectedIndexPath.row] = group
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            let newIndexPath = IndexPath(row: subject!.groups.count, section: 0)
+            subject?.groups.append(group)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    
 }

@@ -235,7 +235,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="3SO-XC-2a0" kind="presentation" id="ffr-os-TfE"/>
+                                    <segue destination="3SO-XC-2a0" kind="presentation" id="7tg-qk-7yo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -249,7 +249,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Agregsr" image="plus" catalog="system" id="0zN-6b-swn">
                                 <connections>
-                                    <segue destination="3SO-XC-2a0" kind="presentation" id="sci-jk-pTP"/>
+                                    <segue destination="3SO-XC-2a0" kind="presentation" id="SMs-fK-wnR"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" systemItem="edit" id="iAz-b6-qhA"/>
@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="AaW-Sz-nl1" kind="relationship" relationship="rootViewController" id="o8v-NM-m3D"/>
+                        <segue destination="AaW-Sz-nl1" kind="relationship" relationship="rootViewController" destinationCreationSelector="addEditGroup:sender:" id="o8v-NM-m3D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYB-RB-P2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -300,6 +300,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="430" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="AaW-Sz-nl1" eventType="editingChanged" id="x7M-5V-oSG"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -317,7 +320,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Professor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIw-v4-ANj">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Professor (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIw-v4-ANj">
                                                     <rect key="frame" x="0.0" y="0.0" width="430" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -338,10 +341,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of students" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHf-Yq-Ptf">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of students (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHf-Yq-Ptf">
                                                     <rect key="frame" x="0.0" y="0.0" width="430" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -357,7 +360,7 @@
                             <tableViewSection id="MWz-gc-Odg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wb3-7d-7bf" detailTextLabel="qUY-Fn-5Dx" style="IBUITableViewCellStyleValue1" id="02n-cN-w1d">
-                                        <rect key="frame" x="0.0" y="178.66666412353516" width="430" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="178.66666412353518" width="430" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="02n-cN-w1d" id="cyt-Gi-zNq">
                                             <rect key="frame" x="0.0" y="0.0" width="399.66666666666669" height="43.666667938232422"/>
@@ -370,8 +373,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Not Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qUY-Fn-5Dx">
-                                                    <rect key="frame" x="292.66666666666669" y="11.999999999999998" width="99" height="20.333333333333332"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Not Set" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qUY-Fn-5Dx">
+                                                    <rect key="frame" x="334.33333333333337" y="11.999999999999998" width="57.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -489,9 +492,14 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Group registration" id="A21-26-KBL">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="7DQ-h8-EBq">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="V5W-SY-tfR">
                             <connections>
-                                <action selector="doneBarButtonTapped:" destination="AaW-Sz-nl1" id="3ca-W3-YBK"/>
+                                <segue destination="bue-6M-88V" kind="unwind" unwindAction="unwindToGroupTableViewWithSegue:" id="Mha-59-spj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="7DQ-h8-EBq">
+                            <connections>
+                                <segue destination="bue-6M-88V" kind="unwind" identifier="saveUnwind" unwindAction="unwindToGroupTableViewWithSegue:" id="HvB-yK-mEk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -502,14 +510,16 @@
                         <outlet property="endTimeLabel" destination="QgP-TY-3JL" id="axf-YE-OET"/>
                         <outlet property="groupIDTextField" destination="mqe-0X-6Km" id="TVX-HG-0tM"/>
                         <outlet property="professorTextField" destination="wIw-v4-ANj" id="gJQ-r4-iJE"/>
+                        <outlet property="saveButton" destination="7DQ-h8-EBq" id="51N-wZ-rRO"/>
                         <outlet property="slotsTextField" destination="oHf-Yq-Ptf" id="Xfh-Ak-f9W"/>
                         <outlet property="startTimeDatePicker" destination="TgV-WX-PCN" id="coL-gI-s4s"/>
                         <outlet property="startTimeLabel" destination="4dI-fV-kxA" id="tQO-ma-GqX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0t-Q2-h2x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bue-6M-88V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4246" y="136"/>
+            <point key="canvasLocation" x="4186" y="136"/>
         </scene>
         <!--Select Days Table View Controller-->
         <scene sceneID="VMN-Vi-d3P">
@@ -653,11 +663,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krm-rj-5Ii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5027" y="136"/>
+            <point key="canvasLocation" x="4931" y="136"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sci-jk-pTP"/>
+        <segue reference="SMs-fK-wnR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bookmark" catalog="system" width="110" height="128"/>

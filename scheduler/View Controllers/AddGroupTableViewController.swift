@@ -10,20 +10,8 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var endTimeDatePicker: UIDatePicker!
     @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    //var days? = [0:false,1:false,2:false,3:false,4:false,5:false,6:false]
-    var days: [Int:Bool]?
-    var group: Group?
-    
-    init?(coder: NSCoder, group: Group?) {
-        self.group = group
-        super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        self.group = nil
-        super.init(coder: coder)
-    }
     
     let startTimeDateLabelCellIndexPath = IndexPath(row: 0, section: 2)
     let startTimeDatePickerCellIndexPath = IndexPath(row: 1, section: 2)
@@ -42,13 +30,44 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
         }
     }
     
+    var group: Group?
+    var days: Set<Int>
+    
+    init?(coder: NSCoder, group: Group?) {
+        self.group = group
+        self.days = Set()
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.group = nil
+        self.days = Set()
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startTimeDatePicker.minimumDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
         startTimeDatePicker.maximumDate = Calendar.current.date(bySettingHour: 23, minute: 30, second: 0, of: Date())
         endTimeDatePicker.maximumDate = Calendar.current.date(bySettingHour: 23, minute: 45, second: 0, of: Date())
+
+        if let group = group {
+            groupIDTextField.text = group.groupID
+            professorTextField.text = group.profesorName
+            slotsTextField.text = "\(group.slots)"
+            daysLabel.text = formattedDays(group.getDays())
+            startTimeLabel.text = group.getStartTime().formatted(date: .omitted, time: .shortened)
+            endTimeLabel.text = group.getEndTime().formatted(date: .omitted, time: .shortened)
+            startTimeDatePicker.date = group.getStartTime()
+            endTimeDatePicker.date = group.getEndTime()
+            days = group.getDays()
+            title = "Edit Group"
+        } else {
+            title = "New Group Registration"
+            days = Set()
+        }
         updateViews()
-        updateDays()
+        updateSaveButtonState()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,67 +112,46 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
     
     func updateViews(){
         endTimeDatePicker.minimumDate = Calendar.current.date(byAdding: .minute, value: 15, to: startTimeDatePicker.date)
-        
         startTimeLabel.text = startTimeDatePicker.date.formatted(date: .omitted, time: .shortened)
-        endTimeLabel .text = endTimeDatePicker.date.formatted(date: .omitted, time: .shortened)
+        endTimeLabel.text = endTimeDatePicker.date.formatted(date: .omitted, time: .shortened)
     }
     
-    func updateDays(){
-        if let days = days {
-            daysLabel.text = formattedDays(days)
-        } else {
-            daysLabel.text = "Not Set"
+    func formattedDays(_ days: Set<Int>)->String{
+        updateSaveButtonState()
+        if days.isEmpty {
+            return "Not Set"
         }
-    }
-    
-    func formattedDays(_ selectedDays: [Int:Bool])->String{
-        var fdays = ""
-        
-        for day in selectedDays {
-            switch day.key {
+        var orderedDays: [Int] = Array(days)
+        orderedDays.sort()
+
+        var fDays: String = ""
+        for day in orderedDays {
+            switch day {
             case 0:
-                if day.value {
-                    fdays += "Mon."
-                }
+                fDays += "Mon."
             case 1:
-                if day.value {
-                    fdays += "Tue."
-                }
+                fDays += "Tue."
             case 2:
-                if day.value {
-                    fdays += "Wed."
-                }
+                fDays += "Wed."
             case 3:
-                if day.value {
-                    fdays += "Thur."
-                }
+                fDays += "Th."
             case 4:
-                if day.value {
-                    fdays += "Fri."
-                }
+                fDays += "Fri."
             case 5:
-                if day.value {
-                    fdays += "Sat."
-                }
+                fDays += "Sat."
             case 6:
-                if day.value {
-                    fdays += "Sun"
-                }
+                fDays += "Sun."
             default:
-                return ""
+                fDays += " "
             }
-            
-            fdays += " "
+            fDays += " "
         }
-        return fdays
+        return fDays
     }
     
-    func selectDaysTableViewController(_ controller: SelectDaysTableViewController, didSelect days: [Int : Bool]) {
+    func selectDaysTableViewController(_ controller: SelectDaysTableViewController, didSelect days: Set<Int>) {
         self.days = days
-        updateDays()
-    }
-    
-    @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
+        daysLabel.text = formattedDays(days)
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -161,14 +159,33 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
     }
     
     @IBSegueAction func selectDays(_ coder: NSCoder) -> SelectDaysTableViewController? {
-        
         let selectDaysController = SelectDaysTableViewController(coder: coder)
         selectDaysController?.delegate = self
-        selectDaysController?.days = days ?? [0:false,1:false,2:false,3:false,4:false,5:false,6:false]
+        selectDaysController?.days = days
         return selectDaysController
     }
+        
+    func updateSaveButtonState() {
+        let groupIDText = groupIDTextField.text ?? ""
+        
+        saveButton.isEnabled = !groupIDText.isEmpty && !days.isEmpty
+    }
     
-    func 
-    
+    @IBAction func textEditingChanged(_ sender: UITextField){
+        updateSaveButtonState()
+    }
+    //groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69, days: Set<Int>, startTime: Date, endTime: Date
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "saveUnwind" else {return}
+        let groupID = groupIDTextField.text!
+        let profesorName = professorTextField.text ?? ""
+        let slotsString = slotsTextField.text ?? "0"
+        let slots = Int(slotsString)
+        let days = days
+        let startTime = startTimeDatePicker.date
+        let endTime = endTimeDatePicker.date
+        
+        group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime)
+    }
     
 }
