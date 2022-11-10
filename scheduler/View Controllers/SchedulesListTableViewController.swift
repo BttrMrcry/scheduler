@@ -21,6 +21,7 @@ class SchedulesListTableViewController: UITableViewController {
     
     init?(coder: NSCoder, schedules:[Set<Group>]) {
         self.schedules = schedules
+        
         super.init(coder: coder)
     }
     
@@ -50,12 +51,12 @@ class SchedulesListTableViewController: UITableViewController {
     }
 
 
-    @IBSegueAction func showSelectedSchedule(_ coder: NSCoder, sender: Any?) -> CallendarViewController? {
+    @IBSegueAction func showSelectedSchedule(_ coder: NSCoder, sender: Any?) -> CalendarViewController? {
         let sender = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: sender)
         let schedules = schedules!
         let selectedSchedule = schedules[indexPath!.row]
-        return CallendarViewController(coder: coder, schedule: selectedSchedule)
+        return CalendarViewController(coder: coder, schedule: selectedSchedule)
     }
     
 

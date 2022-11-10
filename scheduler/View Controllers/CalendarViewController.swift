@@ -56,7 +56,7 @@ extension CalendarViewController: ECWeekViewDataSource {
         
         
         for group in schedule {
-            for activeHour in group.activeHours {
+            for activeHour in group.getActiveHours() {
                 
             }
         }

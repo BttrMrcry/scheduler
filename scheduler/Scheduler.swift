@@ -15,13 +15,25 @@ struct Scheduler {
     private var addedGroups = Set<Group>()
     private var subjects:[Subject] = []
     //Array of generated schedules
-    private var generatedSchedules = [Set<Group>()]
+    private var generatedSchedules:[Set<Group>] = []
     
     
     
     public mutating func makeSchedules(subjects:[Subject]) -> [Set<Group>] {
+        if subjects.count == 0 {
+            return generatedSchedules
+        }
+
         self.subjects = subjects
         dfsScheduler(depth: 0)
+        
+        for s in generatedSchedules {
+            print("aqui")
+            for g in s {
+                print(g.groupID)
+            }
+        }
+
         return generatedSchedules
     }
     
@@ -40,6 +52,7 @@ struct Scheduler {
     */
     
     private mutating func dfsScheduler (depth: Int) {
+        
         if depth >= subjects.count {
             generatedSchedules.append(addedGroups)
             return
