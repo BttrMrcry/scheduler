@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7000FAE2291C793E00CDCD8B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7000FAE1291C793E00CDCD8B /* CalendarViewController.swift */; };
 		70983CAA291B032600F35200 /* SchedulesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70983CA9291B032600F35200 /* SchedulesController.swift */; };
 		3902B6C0291479850057059B /* AddGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B6BF291479850057059B /* AddGroupTableViewController.swift */; };
 		3902B6C22914D2AE0057059B /* SelectDaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B6C12914D2AE0057059B /* SelectDaysTableViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7000FAE1291C793E00CDCD8B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		70983CA9291B032600F35200 /* SchedulesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesController.swift; sourceTree = "<group>"; };
 		3902B6BF291479850057059B /* AddGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupTableViewController.swift; sourceTree = "<group>"; };
 		3902B6C12914D2AE0057059B /* SelectDaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaysTableViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				70EBEBC928A5609700BB472B /* GroupHourGetterViewController.swift */,
 				70E3D47E28A6B7B800FE64D3 /* GetDaysViewController.swift */,
 				70983D15291B2E6D00F35200 /* SchedulesListTableViewController.swift */,
+				7000FAE1291C793E00CDCD8B /* CalendarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B64FFF28DD0C57005FF20D /* ActiveTime.swift in Sources */,
+				7000FAE2291C793E00CDCD8B /* CalendarViewController.swift in Sources */,
 				70A49BB328AEA13200ACAE04 /* SubjectsController.swift in Sources */,
 				D5E6421828A9A03200E846D4 /* Group.swift in Sources */,
 				3902B6C22914D2AE0057059B /* SelectDaysTableViewController.swift in Sources */,
