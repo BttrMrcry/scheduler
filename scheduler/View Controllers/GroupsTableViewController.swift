@@ -76,9 +76,10 @@ class GroupsTableViewController: UITableViewController {
         if let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell){
             let groupToEdit = subject?.groups[indexPath.row]
-            return AddGroupTableViewController(coder: coder, group: groupToEdit)
+            return AddGroupTableViewController(coder: coder, group: groupToEdit, subjectName: subject?.name ?? " ")
         } else {
-            return AddGroupTableViewController(coder: coder, group: nil)
+            
+            return AddGroupTableViewController(coder: coder, group: nil, subjectName: subject?.name ?? " ")
         }
     }
     
