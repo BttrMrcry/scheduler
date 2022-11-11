@@ -23,7 +23,9 @@ class SchedulesListTableViewController: UITableViewController {
     init?(coder: NSCoder, schedules:[Set<Group>]) {
         var arraySchedules:[[Group]] = []
         for schedule in schedules {
-            arraySchedules.append(Array(schedule))
+            var arraySchedule = Array(schedule)
+            arraySchedule.sort(by: {$0.subjectName < $1.subjectName})
+            arraySchedules.append(arraySchedule)
         }
         self.schedules = arraySchedules
         openSection = Array(repeating: true, count: schedules.count)

@@ -140,13 +140,9 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBSegueAction func showGeneratedSchedules(_ coder: NSCoder) -> UITableViewController? {
-        genetateSchedulesButton()
         
-        for s in schedulesController.currentSchedules {
-            for g in s {
-                print(g.groupID)
-            }
-        }
+        genetateSchedulesButton()
+
         
         let nextTableView = SchedulesListTableViewController(coder: coder, schedules: schedulesController.currentSchedules)
         
