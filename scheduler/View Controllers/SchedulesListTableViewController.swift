@@ -73,7 +73,6 @@ class SchedulesListTableViewController: UITableViewController {
             content.text = "Option " + String(indexPath.section + 1)
         }else{
             let currGroup = schedules[indexPath.section][indexPath.row - 1]
-            print("El nombre de la asignatura es:" + currGroup.subjectName)
             content.text = currGroup.subjectName + ": group " + currGroup.groupID
             let startHour = currGroup.getStartTime().formatted(date: .omitted, time: .shortened)
             let endHour = currGroup.getEndTime().formatted(date: .omitted, time: .shortened)
