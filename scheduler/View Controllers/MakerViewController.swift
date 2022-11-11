@@ -47,9 +47,8 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         })
         
         
-  
-        alertController.addAction(ok)
         alertController.addAction(cancelAction)
+        alertController.addAction(ok)
         present(alertController, animated: true, completion: nil)
         
         
