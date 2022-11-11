@@ -31,17 +31,20 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
     }
     
     var group: Group?
+    var subjectName: String?
     var days: Set<Int>
     
-    init?(coder: NSCoder, group: Group?) {
+    init?(coder: NSCoder, group: Group?, subjectName: String?) {
         self.group = group
         self.days = Set()
+        self.subjectName = subjectName
         super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {
         self.group = nil
         self.days = Set()
+        self.subjectName = nil
         super.init(coder: coder)
     }
     
@@ -192,7 +195,9 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
         let startTime = startTimeDatePicker.date
         let endTime = endTimeDatePicker.date
         
-        group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime)
+        
+        
+        group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime, subjectName: subjectName ?? " ")
     }
     
     @objc func dismissKeyboard() {
