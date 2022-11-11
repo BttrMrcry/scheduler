@@ -4,18 +4,20 @@ class Group: Codable{
     var groupID: String
     var profesorName: String
     var slots: Int //Number of students allowed in that group
+    var subjectName: String
     private var days: Set<Int>
     private var startTime: Date
     private var endTime: Date
     private var activeHours:[ActiveTime]
     
-    init(groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69, days: Set<Int>, startTime: Date, endTime: Date){
+    init(groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69, days: Set<Int>, startTime: Date, endTime: Date, subjectName: String){
         self.groupID = groupID
         self.profesorName = profesorName
         self.slots = slots
         self.days = days
         self.startTime = startTime
         self.endTime = endTime
+        self.subjectName = subjectName
         self.activeHours = Group.setActiveHoours(days,startTime,endTime)
     }
     

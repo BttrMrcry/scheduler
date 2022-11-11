@@ -21,9 +21,8 @@ struct Scheduler {
     
     public mutating func makeSchedules(subjects:[Subject]) -> [Set<Group>] {
         if subjects.count == 0 {
-            return generatedSchedules
+            return []
         }
-
         self.subjects = subjects
         dfsScheduler(depth: 0)
         
@@ -61,7 +60,7 @@ struct Scheduler {
         let currentSubject = subjects[depth]
         
         groupsLoop: for subjectGroup in currentSubject.groups {
-            var insertedActiveTimes = [ActiveTime]()
+            var insertedActiveTimes:[ActiveTime] = []
             for activeTime in subjectGroup.getActiveHours() {
                 if let _ = activeTimeTree.search(value: activeTime)?.value {
                     removeInsertedActiveTimes(insertedActiveTimes: insertedActiveTimes)
