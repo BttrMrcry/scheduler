@@ -144,8 +144,7 @@ class MakerViewController: UIViewController, UITableViewDelegate, UITableViewDat
         genetateSchedulesButton()
 
         
-        let nextTableView = SchedulesListTableViewController(coder: coder, schedules: schedulesController.currentSchedules)
-        
+        let nextTableView = SchedulesListTableViewController(coder: coder, schedulesController: self.schedulesController)
         return nextTableView
     }
 }
