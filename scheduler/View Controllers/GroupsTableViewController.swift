@@ -92,6 +92,16 @@ class GroupsTableViewController: UITableViewController {
             subject?.groups[selectedIndexPath.row] = group
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
         } else {
+            for groupToCompare in subject!.groups {
+                if group.groupID == groupToCompare.groupID {
+                    let usedNameAlertController = UIAlertController(title: "Name already used", message: "The typed name is already in use by another group, try another one", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                    usedNameAlertController.addAction(ok)
+                    self.dismiss(animated: true, completion: {self.present(usedNameAlertController, animated: true, completion: nil)})
+                    print("Error")
+                    return
+                }
+            }
             let newIndexPath = IndexPath(row: subject!.groups.count, section: 0)
             subject?.groups.append(group)
             tableView.insertRows(at: [newIndexPath], with: .automatic)

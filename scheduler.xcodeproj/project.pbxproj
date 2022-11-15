@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3902B6C0291479850057059B /* AddGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B6BF291479850057059B /* AddGroupTableViewController.swift */; };
 		3902B6C22914D2AE0057059B /* SelectDaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B6C12914D2AE0057059B /* SelectDaysTableViewController.swift */; };
+		39D95A3B2922A4AC009DAB67 /* InformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D95A3A2922A4AC009DAB67 /* InformationTableViewController.swift */; };
 		70983CAA291B032600F35200 /* SchedulesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70983CA9291B032600F35200 /* SchedulesController.swift */; };
 		70983CAD291B138E00F35200 /* ECWeekView in Frameworks */ = {isa = PBXBuildFile; productRef = 70983CAC291B138E00F35200 /* ECWeekView */; };
 		70983D16291B2E6D00F35200 /* SchedulesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70983D15291B2E6D00F35200 /* SchedulesListTableViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		3902B6BF291479850057059B /* AddGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupTableViewController.swift; sourceTree = "<group>"; };
 		3902B6C12914D2AE0057059B /* SelectDaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDaysTableViewController.swift; sourceTree = "<group>"; };
+		39D95A3A2922A4AC009DAB67 /* InformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewController.swift; sourceTree = "<group>"; };
 		70983CA9291B032600F35200 /* SchedulesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesController.swift; sourceTree = "<group>"; };
 		70983D15291B2E6D00F35200 /* SchedulesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesListTableViewController.swift; sourceTree = "<group>"; };
 		70A49BB228AEA13200ACAE04 /* SubjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				3902B6BF291479850057059B /* AddGroupTableViewController.swift */,
 				3902B6C12914D2AE0057059B /* SelectDaysTableViewController.swift */,
 				70983D15291B2E6D00F35200 /* SchedulesListTableViewController.swift */,
+				39D95A3A2922A4AC009DAB67 /* InformationTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				70DF825A28A4088F00D3CCC6 /* GroupsTableViewController.swift in Sources */,
 				D587F8EC28F2095C004B5DB5 /* Scheduler.swift in Sources */,
 				D5FAF5CE28A87C790069F0B6 /* Subject.swift in Sources */,
+				39D95A3B2922A4AC009DAB67 /* InformationTableViewController.swift in Sources */,
 				70983D16291B2E6D00F35200 /* SchedulesListTableViewController.swift in Sources */,
 				70983CAA291B032600F35200 /* SchedulesController.swift in Sources */,
 				70DF78D1289C1FD7002B40CA /* AppDelegate.swift in Sources */,

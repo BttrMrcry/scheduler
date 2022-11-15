@@ -26,7 +26,7 @@ class SchedulesListTableViewController: UITableViewController {
             arraySchedules.append(Array(schedule))
         }
         self.schedules = arraySchedules
-        openSection = Array(repeating: true, count: schedules.count)
+        openSection = Array(repeating: false, count: schedules.count)
         super.init(coder: coder)
     }
     

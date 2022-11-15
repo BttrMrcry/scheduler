@@ -184,7 +184,7 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
     @IBAction func textEditingChanged(_ sender: UITextField){
         updateSaveButtonState()
     }
-    //groupID: String, profesorName: String = "Juanito Banana", slots: Int = 69, days: Set<Int>, startTime: Date, endTime: Date
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else {return}
         let groupID = groupIDTextField.text!
@@ -194,10 +194,8 @@ class AddGroupTableViewController: UITableViewController, SelectDaysTableViewCon
         let days = days
         let startTime = startTimeDatePicker.date
         let endTime = endTimeDatePicker.date
-        
-        
-        
-        group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime, subjectName: subjectName ?? " ")
+
+        group = Group(groupID: groupID, profesorName: profesorName, slots: slots ?? 0, days: days, startTime: startTime, endTime: endTime, subjectName: subjectName ?? "")
     }
     
     @objc func dismissKeyboard() {
