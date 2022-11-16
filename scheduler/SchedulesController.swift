@@ -34,7 +34,6 @@ class SchedulesController {
         let propertyListEncoder = PropertyListEncoder()
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsDirectory.appendingPathComponent("schedules").appendingPathExtension("plist")
-        
         guard let encodedSubjects = try? propertyListEncoder.encode(self.savedSchedules)else{
             print("Error al guardar los horarios")
             return
